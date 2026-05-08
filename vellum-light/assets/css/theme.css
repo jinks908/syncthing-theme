@@ -1130,16 +1130,7 @@ identicon, identicon.panel-icon { filter: contrast(0.95) saturate(0.9); }
   background: var(--bg-stripe) !important;
 }
 
-/* Hide Help and Language dropdowns from navbar */
-.dropdown:has(.fa-question-circle),
-.dropdown:has(.fa-globe) {
-  display: none;
-}
 
-/* Hide the device-style item from Actions menu */
-.dropdown-menu li:has(.fa-user-md) {
-  display: none;
-}
 
 /* Modal alert spacing */
 .modal-header.alert {
