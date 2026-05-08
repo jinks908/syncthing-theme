@@ -9,7 +9,6 @@ Both themes share the same colour system, layout tweaks, and a custom Vellum log
 
 ## Screenshots
 
-> _Add `screenshots/light.jpg` and `screenshots/dark.jpg` and they will render below._
 
 | Light | Dark |
 | --- | --- |
