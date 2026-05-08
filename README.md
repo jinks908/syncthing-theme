@@ -9,11 +9,11 @@ Both themes share the same colour system, layout tweaks, and a custom Vellum log
 
 ## Screenshots
 
-> _Add `screenshots/light.png` and `screenshots/dark.png` and they will render below._
+> _Add `screenshots/light.jpg` and `screenshots/dark.jpg` and they will render below._
 
 | Light | Dark |
 | --- | --- |
-| ![Vellum Light](screenshots/light.png) | ![Vellum Dark](screenshots/dark.png) |
+| ![Vellum Light](screenshots/light.jpg) | ![Vellum Dark](screenshots/dark.jpg) |
 
 ## Install
 
@@ -31,7 +31,7 @@ Syncthing loads custom themes from the `gui/` folder inside its config directory
 
 ```sh
 # macOS / Linux — pick one or both
-git clone https://github.com/<your-username>/syncthing-vellum.git
+git clone https://github.com/pelinoleg/syncthing-vellum.git
 cp -R syncthing-vellum/vellum-light  "$HOME/Library/Application Support/Syncthing/gui/"
 cp -R syncthing-vellum/vellum-dark   "$HOME/Library/Application Support/Syncthing/gui/"
 ```
