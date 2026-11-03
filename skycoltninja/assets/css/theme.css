@@ -1,27 +1,31 @@
 /* ============================================================================
-SkyColtNinja Dark Theme
-============================================================================ */
+Theme: SkyColtNinja Dark (Syncthing)
+Version: 1.1.1
+===============================================================================
+#:# Variables
+*/
 :root {
-    /* === SURFACES (4 layers, darkest page → lightest elevated) === */
+    /* ## Surfaces (4 layers, darkest page → lightest elevated) */
     --bg-page:        #000f24;     /* body background — deep warm coffee */
     --paper:          #001122;     /* darkest layer */
     --surface:        #0d1b2f;     /* main cards */
     --elevated:       #112038;     /* expanded folders, inputs, modals */
     --overlay:        #0d1b2f;     /* dropdowns, popovers */
-    --tint:           #2ac3de;     /* default-button hover */
+    --tint:           #2fe1c8;     /* default-button hover */
     --tint-blue:      #4da0ff25;   /* folder-row hover (warm translucent) */
     --bg-footer:      #0d1b2f;     /* panel footer bg */
     --bg-stripe:      #F0EAE008;   /* table-striped even rows */
     --bg-accordion-heading: #201c3b;
+    --bg-frosted:     rgba(6, 25, 45, 0.6);    /* frosted glass/blur effect */
 
-    /* === TEXT (warm cream, never pure white) === */
+    /* ## Text (warm cream, never pure white) */
     --text:           #c0caf5;     /* primary */
     --text-2:         #a9b1d6;     /* secondary */
     --text-muted:     #9fb4df;     /* labels */
     --text-faint:     #586e98;     /* placeholders */
     --text-hover:     #000000;     /* links, hover */
 
-    /* === ACCENT COLORS (desaturated + lightened for dark bg) === */
+    /* ## Accent Colors (desaturated + lightened for dark bg) */
     --green:          #2fe1c8;
     --green-soft:     #142e39;
     --green-text:     #7aecdc;
@@ -44,9 +48,9 @@ SkyColtNinja Dark Theme
     --yellow-soft:    #3A2F1C;
     --yellow-text:    #f6c177;
 
-    --purple:         #B89AD4;     /* lavender */
-    --purple-soft:    #312640;
-    --purple-text:    #D8C5E8;
+    --purple:         #be86f7;     /* lavender */
+    --purple-soft:    #201c3b;
+    --purple-text:    #d7afff;
 
     --teal:           #7FB8B5;     /* sage-teal */
     --teal-soft:      #1F3837;
@@ -55,34 +59,35 @@ SkyColtNinja Dark Theme
     --pink:           #D89AB5;     /* dusty rose */
     --pink-soft:      #3D2A33;
 
-    /* === BUTTON STATES === */
+    /* ## Button States */
     --btn-primary-hover: #2ac3de;
 
-    /* === TYPOGRAPHY === */
+    /* ## Typography */
     --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
     --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
-    /* === RADII === */
+    /* ## Radii */
     --radius:         10px;
     --radius-lg:      14px;
     --radius-sm:      6px;
     --radius-pill:    999px;
 
-    /* === SHADOWS & RINGS (light hairlines on dark, deeper drop shadows) === */
+    /* ## Shadows & Rings (light hairlines on dark, deeper drop shadows) === */
     --ring-1:         inset 0 0 0 1px rgba(240, 234, 224, 0.06);
-    --ring-2:         inset 0 0 0 1px rgba(240, 234, 224, 0.10);
+    --ring-2:         inset 0 0 0 1px rgba(77, 160, 255, 0.10);
+    --ring-hover:     inset 0 0 0 1px rgba(77, 160, 255, 0.50);
     --shadow-xs:      0 1px 2px rgba(0, 0, 0, 0.20);
     --shadow-sm:      0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.20);
     --shadow:         0 4px 12px rgba(0, 0, 0, 0.30), 0 2px 4px rgba(0, 0, 0, 0.20);
     --shadow-md:      0 12px 24px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.25);
     --shadow-lg:      0 24px 48px rgba(0, 0, 0, 0.50), 0 8px 16px rgba(0, 0, 0, 0.30);
 
-    /* === MOTION === */
+    /* ## Motion */
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ===========================================================================
-GLOBAL
+#:# Global
 =========================================================================== */
 html, body {
     background: var(--bg-page) !important;
@@ -123,7 +128,7 @@ input[type="email"], textarea, select,
 button:focus { outline: none !important; }
 
 /* ===========================================================================
-NAVBAR — compact 44px, mini logo, no heavy padding
+#:# Navbar — compact 44px, mini logo, no heavy padding
 =========================================================================== */
 .logo {
     filter:hue-rotate(20deg) saturate(1.0) brightness(1.0) !important;
@@ -197,12 +202,13 @@ NAVBAR — compact 44px, mini logo, no heavy padding
     margin: 6px 2px !important;
     padding: 6px 10px !important;
     line-height: 1.4 !important;
-    transition: all .15s var(--ease);
+    transition: 0.3s;
     height: auto !important;
 }
 .navbar-nav > li > a:hover {
     color: var(--text-hover) !important;
     background: var(--tint) !important;
+    transition: 0.3s;
 }
 .navbar-nav > li.open > a,
 .navbar-default .navbar-nav > .open > a,
@@ -210,13 +216,14 @@ NAVBAR — compact 44px, mini logo, no heavy padding
 .navbar-default .navbar-nav > .open > a:focus {
     background: var(--tint) !important;
     color: var(--text-hover) !important;
+    transition: 0.3s;
 }
 
 /* Skip noscript navbar */
 noscript .navbar { display: none; }
 
 /* ===========================================================================
-CONTAINER & HEADINGS
+#:# Container & Headings
 =========================================================================== */
 .container, .container-fluid {
     padding-top: 16px;
@@ -252,7 +259,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ===========================================================================
-PANELS
+#:# Panels
 =========================================================================== */
 .panel,
 .panel-default,
@@ -297,7 +304,7 @@ PANELS
 }
 
 /* ===========================================================================
-PANEL-HEADING (button)
+#:# Panel-Heading (Button)
 =========================================================================== */
 .panel-heading,
 .panel > .panel-heading,
@@ -340,7 +347,7 @@ button.panel-heading[aria-expanded="true"] {
 }
 
 /* ===========================================================================
-PANEL-TITLE
+#:# Panel-Title
 =========================================================================== */
 .panel-title,
 h4.panel-title,
@@ -374,7 +381,7 @@ button.panel-heading h4.panel-title {
     justify-content: center;
 }
 .panel-icon .fa, .panel-icon .fas, .panel-icon .far,
-.panel-icon span { color: inherit !important; font-size: 14px; }
+.panel-icon span { color: inherit; font-size: 14px; }
 
 .panel-title .panel-title-text, .panel-title-text {
     color: var(--text) !important;
@@ -418,7 +425,7 @@ button.panel-heading h4.panel-title {
 .panel-status .inline-icon { display: inline-flex; }
 
 /* ===========================================================================
-PANEL-PROGRESS
+#:# Panel-Progress
 =========================================================================== */
 .panel-progress {
     position: absolute !important;
@@ -438,7 +445,7 @@ PANEL-PROGRESS
 button.panel-heading > * { position: relative; z-index: 2; }
 
 /* ===========================================================================
-ROWS LAYOUT (folder details)
+#:# Rows Layout (Folder Details)
 =========================================================================== */
 .panel-body .table,
 .panel-body table.table-condensed,
@@ -494,7 +501,7 @@ ROWS LAYOUT (folder details)
 .panel-body .table > tbody > tr > th .fa,
 .panel-body .table > tbody > tr > th .fas,
 .panel-body .table > tbody > tr > th .far {
-    color: var(--text-muted) !important;
+    color: var(--green-text) !important;
     font-size: 13px;
     width: 14px;
     text-align: center;
@@ -661,7 +668,7 @@ ROWS LAYOUT (folder details)
 }
 
 /* ===========================================================================
-TABLES OUTSIDE PANELS (modals)
+#:# Tables Outside Panels (Modals)
 =========================================================================== */
 .modal-body .table {
     background: transparent !important;
@@ -683,8 +690,12 @@ TABLES OUTSIDE PANELS (modals)
     letter-spacing: 0.05em;
 }
 
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: var(--elevated) !important;
+}
+
 /* ===========================================================================
-BUTTONS
+#:# Buttons
 =========================================================================== */
 .btn {
     border-radius: var(--radius-sm) !important;
@@ -718,10 +729,9 @@ BUTTONS
 }
 .pull-right .btn.btn-sm.btn-default:hover,
 .btn-default:hover, .pull-right button.ng-scope:hover, .btn-default:focus {
-    background: var(--tint) !important;
-    background-color: var(--tint) !important;
-    color: var(--text-hover) !important;
-    box-shadow: var(--ring-2), var(--shadow-sm) !important;
+    background-color: var(--blue-hover) !important;
+    color: var(--text) !important;
+    box-shadow: var(--ring-hover), var(--shadow-sm) !important;
     transition: 0.3s;
 }
 .btn-default:active {
@@ -782,7 +792,7 @@ BUTTONS
 }
 
 /* ===========================================================================
-LABELS / BADGES
+#:# Labels / Badges
 =========================================================================== */
 .label, .badge {
     font-weight: 600;
@@ -804,7 +814,7 @@ LABELS / BADGES
 .label-danger  { background: var(--red-soft) !important; color: var(--red-text) !important; }
 
 /* ===========================================================================
-PROGRESS
+#:# Progress
 =========================================================================== */
 .progress {
     background: var(--tint) !important;
@@ -827,7 +837,7 @@ PROGRESS
 .progress-bar-success  { background: var(--green) !important; }
 
 /* ===========================================================================
-FORMS — inputs darker than surrounding bg, readable
+#:# Forms — inputs darker than surrounding bg, readable
 =========================================================================== */
 .form-control, input.form-control, select.form-control, textarea.form-control,
 input[type="text"], input[type="password"], input[type="email"],
@@ -872,10 +882,11 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--blue); }
 .modal-body .form-group { margin-bottom: 14px; }
 
 /* ===========================================================================
-MODAL
+#:# Modal
 =========================================================================== */
 .modal-content {
-    background: var(--surface) !important;
+    background: var(--bg-frosted) !important;
+    backdrop-filter: blur(6px);
     border: none !important;
     border-radius: var(--radius-lg) !important;
     box-shadow: var(--shadow-lg) !important;
@@ -901,7 +912,7 @@ MODAL
 .modal-body {
     color: var(--text) !important;
     padding: 22px !important;
-    background: var(--surface) !important;
+    /* background: var(--surface) !important; */
 }
 .modal-footer {
     background: var(--bg-footer) !important;
@@ -926,7 +937,7 @@ MODAL
 .close:hover { color: var(--text) !important; opacity: 1 !important; }
 
 /* ===========================================================================
-NAV-TABS
+#:# Nav-Tabs
 =========================================================================== */
 .nav-tabs {
     border: none !important;
@@ -962,16 +973,17 @@ NAV-TABS
 }
 
 /* ===========================================================================
-DROPDOWN
+#:# Dropdown
 =========================================================================== */
 .dropdown-menu {
-    background: var(--overlay) !important;
+    background: var(--bg-frosted) !important;
     border: none !important;
     border-radius: var(--radius) !important;
     box-shadow: var(--shadow-md), var(--ring-1) !important;
     padding: 4px !important;
     min-width: 200px;
     margin-top: 4px;
+    backdrop-filter: blur(6px);
 }
 .dropdown-menu > li > a {
     color: var(--text) !important;
@@ -991,7 +1003,7 @@ DROPDOWN
 .dropdown-menu .divider { background: rgba(240, 234, 224, 0.10) !important; margin: 4px 0; height: 1px; }
 
 /* ===========================================================================
-ALERTS
+#:# Alerts
 =========================================================================== */
 .alert {
     border-radius: var(--radius) !important;
@@ -1006,7 +1018,7 @@ ALERTS
 .alert-danger  { background: var(--red-soft) !important; color: var(--red-text) !important; box-shadow: inset 0 0 0 1px rgba(229, 131, 131, 0.30), var(--shadow-xs) !important; }
 
 /* ===========================================================================
-TEXT COLORS
+#:# Text Colors
 =========================================================================== */
 .text-success { color: var(--green-text) !important; }
 .text-warning { color: var(--orange-text) !important; }
@@ -1016,11 +1028,11 @@ TEXT COLORS
 .text-primary { color: var(--blue-text) !important; }
 
 /* ===========================================================================
-TOOLTIP — light tooltip on dark theme
+#:# Tooltip — light tooltip on dark theme
 =========================================================================== */
 .tooltip-inner {
-    background: var(--text) !important;
-    color: var(--bg-page) !important;
+    background: var(--blue-soft) !important;
+    color: var(--text) !important;
     border: none;
     font-size: 12px;
     font-weight: 500;
@@ -1029,13 +1041,14 @@ TOOLTIP — light tooltip on dark theme
     max-width: 320px;
     box-shadow: var(--shadow-md);
 }
+.tooltip.in { opacity: 1 !important; }
 .tooltip.top    .tooltip-arrow { border-top-color: var(--text) !important; }
 .tooltip.bottom .tooltip-arrow { border-bottom-color: var(--text) !important; }
 .tooltip.left   .tooltip-arrow { border-left-color: var(--text) !important; }
 .tooltip.right  .tooltip-arrow { border-right-color: var(--text) !important; }
 
 /* ===========================================================================
-SCROLLBAR
+#:# Scrollbar
 =========================================================================== */
 * { scrollbar-color: rgba(240, 234, 224, 0.15) transparent; scrollbar-width: thin; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
@@ -1050,7 +1063,7 @@ SCROLLBAR
 hr { border: none !important; height: 1px; background: rgba(240, 234, 224, 0.10); margin: 20px 0; }
 
 /* ===========================================================================
-MISC
+#:# Misc
 =========================================================================== */
 .pagination > li > a, .pagination > li > span {
     background: var(--surface) !important;
@@ -1131,6 +1144,8 @@ identicon.panel-icon.ng-isolate-scope[data-value="deviceCfg.deviceID"] {
 
 .panel-title-text { display: block; }
 .panel-status.pull-right { float: none !important; }
+
+.panel-status.text-primary { color: var(--text-hover) !important; }
 
 .panel-footer .pull-right .btn { margin-left: 6px; }
 .panel-footer .clearfix { display: none; }
