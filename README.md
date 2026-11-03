@@ -9,10 +9,7 @@ Both themes share the same colour system, layout tweaks, and a custom Vellum log
 
 ## Screenshots
 
-
-| Light | Dark |
-| --- | --- |
-| ![Vellum Light](screenshots/light.jpg) | ![Vellum Dark](screenshots/dark.jpg) |
+![SkyColtNinja Dark](screenshots/syncthing_skycoltninja_theme.jpg)
 
 ## Install
 
